@@ -3,14 +3,14 @@ from caminos_random import RandomWalk
 
 
 while True:
-    rw = RandomWalk()
+    rw = RandomWalk(50_000) #Generamos 50000 puntos
     rw.rellenar_camino()
 
     plt.style.use('classic')
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=(15,9), dpi= 720) #Tamaño mapa 15-9
     point_numbers = range(rw.num_points) #Creamos un rango con la longitud igual a los puntos y lo almacenamos  en una lista
 
-    ax.scatter(rw.x_values, rw.y_values, c= point_numbers, cmap = plt.cm.Blues, edgecolors='none', s=15) #edgecolors indica elcolor del borde
+    ax.scatter(rw.x_values, rw.y_values, c= point_numbers, cmap = plt.cm.Blues, edgecolors='none', s=1) #edgecolors indica elcolor del borde
 
     #Enfatizar el primer punto y el último
     ax.scatter(0, 0, c='green', edgecolors='none', s=100)
@@ -25,4 +25,5 @@ while True:
     seguir = input("Quieres seguir? y/n: ")
     if seguir == 'n':
         break
+
 

@@ -31,7 +31,7 @@ class RandomWalk:
                 continue
             
             #Calcula la nueva posición. Sumamos a los valores la distancia recorrida  y los añadimos a la lista
-            x = self.x_values[-1] + x_paso 
+            x = self.x_values[-1] + x_paso
             y = self.y_values[-1] + y_paso
 
             self.x_values.append(x)
